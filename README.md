@@ -9,6 +9,7 @@ This repository **consumes** Alpha; it is not the harness. The eval engine lives
 ```
 reports/           # Human-readable campaign write-ups (sanitized)
 qualifications/    # Shipping qualification JSON + manifest snapshots
+notes/             # Short campaign write-ups / run context
 ```
 
 ## Running campaigns
@@ -30,4 +31,4 @@ Files here must not contain personal emails, LAN/Tailscale IPs, MAC addresses, s
 
 ## License
 
-Campaign text and JSON in this repo are published for transparency around Alpha eval methodology. Alpha itself is MIT-licensed.
+[MIT](LICENSE). Campaign text and JSON are published for transparency around Alpha eval methodology.

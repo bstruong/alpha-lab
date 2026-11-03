@@ -10,5 +10,5 @@
   "report_uri": "reports/20261017T060416Z-email-triage.md",
   "qualified_at": "2026-10-17T06:06:08Z",
   "expires_at": "2026-11-16T06:06:08Z",
-  "node_class": "am5-homelab-32g-3060"
+  "node_class": "lab-gpu-32g"
 }
