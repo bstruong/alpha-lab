@@ -1,5 +1,5 @@
 {
-  "schema": "omega.qualification.v1",
+  "schema": "alpha.qualification.v1",
   "model_id": "gemma4-27b",
   "engine_preset": "gemma4-27b",
   "prompt_preset": "shipping",

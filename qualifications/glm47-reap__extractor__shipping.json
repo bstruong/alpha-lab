@@ -1,5 +1,5 @@
 {
-  "schema": "omega.qualification.v1",
+  "schema": "alpha.qualification.v1",
   "model_id": "glm47-reap",
   "engine_preset": "glm47-reap",
   "prompt_preset": "shipping",
