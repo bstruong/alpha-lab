@@ -1,6 +1,6 @@
 {
   "schema": "alpha.qualification_manifest.v1",
-  "generated_at": "2026-10-23T05:03:08Z",
+  "generated_at": "2026-11-06T03:14:12Z",
   "roles": {
     "coder": {
       "primary_model": "qwen36-coder-hybrid",
@@ -15,17 +15,6 @@
           "qualified_at": "2026-10-17T04:06:15Z",
           "expires_at": "2026-11-16T04:06:15Z",
           "artifact_file": "qwen36-coder-hybrid__coder__shipping.json"
-        },
-        {
-          "model_id": "glm47-reap",
-          "engine_preset": "glm47-reap",
-          "prompt_preset": "shipping",
-          "pass_at_1": 0.78,
-          "scenario_id": "qwen36-daily",
-          "report_uri": "reports/20261017T041648Z-qwen36-daily.md",
-          "qualified_at": "2026-10-17T04:54:27Z",
-          "expires_at": "2026-11-16T04:54:27Z",
-          "artifact_file": "glm47-reap__coder__shipping.json"
         }
       ]
     },
@@ -38,9 +27,9 @@
           "prompt_preset": "shipping",
           "pass_at_1": 1.0,
           "scenario_id": "ocr-extraction",
-          "report_uri": "reports/20261017T053853Z-ocr-extraction.md",
-          "qualified_at": "2026-10-17T05:39:22Z",
-          "expires_at": "2026-11-16T05:39:22Z",
+          "report_uri": "reports/20261103T044619Z-ocr-extraction.md",
+          "qualified_at": "2026-11-03T04:46:23Z",
+          "expires_at": "2026-12-03T04:46:23Z",
           "artifact_file": "glm47-reap__extractor__shipping.json"
         },
         {

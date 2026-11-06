@@ -12,12 +12,19 @@ Lab consumer run of [Alpha](https://github.com/bstruong/alpha) against a local O
 
 ## Results (`glm47-reap`, shipping)
 
-| Scenario | Pass@1 | Qualified? | Report |
-| --- | --- | --- | --- |
-| `ocr-extraction` | 1.00 | yes (extractor) | `reports/20261103T044619Z-ocr-extraction.md` |
-| `pii-scrubbing` | 0.00 | no | `reports/20261103T044616Z-pii-scrubbing.md` |
-| `scoped-coding` | 0.67 | no | `reports/20261103T045026Z-scoped-coding.md` |
-| `qwen36-daily` | 0.89 | yes (coder) | `reports/20261103T050105Z-qwen36-daily.md` |
+Qualification uses **first-attempt** gate Pass@1 and graded Pass@1 against each scenario’s configured thresholds (not final-with-repair aggregates).
+
+| Scenario | Aggregate Pass@1 | Gate Pass@1 | Graded Pass@1 | Thresholds | Qualified? | Report |
+| --- | --- | --- | --- | --- | --- | --- |
+| `ocr-extraction` | 1.00 | n/a | 1.00 | graded ≥ 0.90 | **yes** (extractor) | `reports/20261103T044619Z-ocr-extraction.md` |
+| `pii-scrubbing` | 0.00 | n/a | 0.00 | graded ≥ 0.90 | no | `reports/20261103T044616Z-pii-scrubbing.md` |
+| `scoped-coding` | 0.67 | n/a | 0.67 | graded ≥ 0.80 | no | `reports/20261103T045026Z-scoped-coding.md` |
+| `qwen36-daily` | 0.89 | 0.67¹ | ~0.67² | gates = 1.0; graded ≥ 0.70 | no | `reports/20261103T050105Z-qwen36-daily.md` |
+
+¹ `gate-hello` failed first attempt and required repair (final pass only).  
+² Four of six graded tasks passed first attempt; `audit-three` failed; `erase-account` repaired.
+
+Only the extractor shipping artifact from this campaign was promoted. Failed Nov 3 coder / sanitizer / scoped_coder JSON were not kept as active qualifications. Prior Oct sanitizer shipping for `glm47-reap` remains.
 
 ## Notes
 
