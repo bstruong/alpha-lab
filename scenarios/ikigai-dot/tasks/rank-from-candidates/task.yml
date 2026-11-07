@@ -1,0 +1,27 @@
+name: rank-from-candidates
+kind: graded
+expected_seed: 0
+executor: openai_chat_completions
+grader: json_schema
+thinking_level: "none"
+json_mode: true
+required_json_keys:
+  - as_of
+  - ranked
+nested_json_keys:
+  ranked:
+    - rank
+    - contact_name
+    - kind
+expected_json_values:
+  as_of: "2026-11-06"
+required_json_markers:
+  - '"rank"\s*:\s*1[^}]*"Maya Chen"'
+  - '"rank"\s*:\s*2[^}]*"Jordan Lee"'
+  - '"rank"\s*:\s*3[^}]*"Sunday Checklist"'
+  - follow_up_due
+  - stale_prospect
+  - sunday_gap
+denied_json_patterns:
+  promo_included: 'Promo Digest'
+  sam_included: 'Sam Okonkwo'

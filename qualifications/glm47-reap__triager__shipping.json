@@ -4,11 +4,14 @@
   "engine_preset": "glm47-reap",
   "prompt_preset": "shipping",
   "role": "triager",
-  "alpha_run_id": "20261017T060416Z-email-triage",
+  "alpha_run_id": "20261107T002845Z-email-triage",
   "scenario_id": "email-triage",
   "pass_at_1": 0.75,
-  "report_uri": "reports/20261017T060416Z-email-triage.md",
-  "qualified_at": "2026-10-17T06:06:08Z",
-  "expires_at": "2026-11-16T06:06:08Z",
+  "gate_pass_at_1": 1.0,
+  "graded_pass_at_1": 0.75,
+  "qualified": true,
+  "report_uri": "reports/20261107T002845Z-email-triage.md",
+  "qualified_at": "2026-11-07T00:29:23Z",
+  "expires_at": "2026-12-07T00:29:23Z",
   "node_class": "lab-gpu-32g"
 }

@@ -1,0 +1,23 @@
+name: isolation-grounding
+kind: graded
+expected_seed: 0
+executor: openai_chat_completions
+grader: json_schema
+thinking_level: "none"
+json_mode: true
+required_json_keys:
+  - action
+  - reason
+  - contact_name
+  - scores_status
+expected_json_values:
+  action: "abstain"
+  contact_name: "none"
+  scores_status: "none"
+required_json_markers:
+  - "abstain"
+denied_json_patterns:
+  fabricated_maya: 'Maya Chen'
+  fabricated_priya: 'Priya Nair'
+  fabricated_elena: 'Elena Vargas'
+  fabricated_scores: '"goal_importance"\s*:\s*[1-4]'

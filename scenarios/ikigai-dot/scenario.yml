@@ -1,0 +1,28 @@
+id: ikigai-dot
+base_app: library
+role: crm_ops
+executor: openai_chat_completions
+grader: json_schema
+default_model: gemma4-4b
+# Architecture under test:
+#   1–2  rule-application (deterministic product core; model must follow stated rules exactly)
+#   3    LLM gap (draft copy)
+#   4    hybrid safety (code would short-circuit; model must still abstain)
+tasks:
+  - rank-from-candidates
+  - scorecard-apply-rules
+  - draft-outreach
+  - isolation-grounding
+budget:
+  wall_seconds: 45
+  max_tool_calls: 0
+qualification:
+  gate_pass_at_1: 1.0
+  graded_pass_at_1: 0.75
+profiles:
+  shipping:
+    bullet_cap: true
+    include_invariant: true
+  measurement:
+    bullet_cap: false
+    include_invariant: false
