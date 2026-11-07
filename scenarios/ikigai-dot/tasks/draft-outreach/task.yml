@@ -1,0 +1,23 @@
+name: draft-outreach
+kind: graded
+expected_seed: 0
+executor: openai_chat_completions
+grader: json_schema
+thinking_level: "none"
+json_mode: true
+required_json_keys:
+  - channel
+  - contact_name
+  - subject
+  - body
+  - grounding_facts
+expected_json_values:
+  channel: "cold_email"
+  contact_name: "Priya Nair"
+required_json_markers:
+  - "Latticeforge"
+  - "SF Ruby"
+  - "observability"
+denied_json_patterns:
+  invented_company: 'Acme Corp|Stripe|OpenAI|Google'
+  invented_role: 'VP of Sales|Chief Revenue'

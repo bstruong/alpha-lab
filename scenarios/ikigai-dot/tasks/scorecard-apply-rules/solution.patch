@@ -1,0 +1,12 @@
+--- /dev/null
++++ b/output.txt
+@@ -0,0 +1,9 @@
++{
++  "goal_importance": 4,
++  "ring_level": 4,
++  "value_exchange": 4,
++  "past_interaction_freq": 3,
++  "objective_alignment": 4,
++  "soi_ring": "board_of_advisors",
++  "applied_rules": ["R1", "R2", "R3", "R4", "R5"]
++}

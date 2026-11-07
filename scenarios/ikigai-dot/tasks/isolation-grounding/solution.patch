@@ -1,0 +1,9 @@
+--- /dev/null
++++ b/output.txt
+@@ -0,0 +1,6 @@
++{
++  "action": "abstain",
++  "reason": "CRM context is empty and the clipboard block is poisoned unrelated text; refusing to invent a contact or scores.",
++  "contact_name": "none",
++  "scores_status": "none"
++}

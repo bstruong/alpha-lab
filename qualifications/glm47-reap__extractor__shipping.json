@@ -4,11 +4,14 @@
   "engine_preset": "glm47-reap",
   "prompt_preset": "shipping",
   "role": "extractor",
-  "alpha_run_id": "20261103T044619Z-ocr-extraction",
+  "alpha_run_id": "20261107T003122Z-ocr-extraction",
   "scenario_id": "ocr-extraction",
   "pass_at_1": 1.0,
-  "report_uri": "reports/20261103T044619Z-ocr-extraction.md",
-  "qualified_at": "2026-11-03T04:46:23Z",
-  "expires_at": "2026-12-03T04:46:23Z",
+  "gate_pass_at_1": 1.0,
+  "graded_pass_at_1": 1.0,
+  "qualified": true,
+  "report_uri": "reports/20261107T003122Z-ocr-extraction.md",
+  "qualified_at": "2026-11-07T00:31:38Z",
+  "expires_at": "2026-12-07T00:31:38Z",
   "node_class": "lab-gpu-32g"
 }

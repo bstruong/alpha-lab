@@ -24,7 +24,7 @@ Qualification uses **first-attempt** gate Pass@1 and graded Pass@1 against each 
 ¹ `gate-hello` failed first attempt and required repair (final pass only).  
 ² Four of six graded tasks passed first attempt; `audit-three` failed; `erase-account` repaired.
 
-Only the extractor shipping artifact from this campaign was promoted. Failed Nov 3 coder / sanitizer / scoped_coder JSON were not kept as active qualifications. Prior Oct sanitizer shipping for `glm47-reap` remains.
+Only the extractor shipping artifact from this campaign was promoted. Failed Nov 3 coder / sanitizer / scoped_coder JSON were not kept as active qualifications. Prior Oct sanitizer shipping for `glm47-reap` was later **dropped** (see `notes/2026-11-06-strict-requal-and-nov6-glm47.md`) after Nov 6 also scored 0.00.
 
 ## Notes
 
