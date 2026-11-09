@@ -37,6 +37,13 @@ Shipping / measurement profiles set `include_invariant: false`. Answer-bearing `
 
 Do **not** run `bin/alpha qualify --manifest` until Phase 7 — there is no active evidence index.
 
+## Provenance (Phase 5)
+
+Promotable evidence must carry immutable `provenance` + `run_manifest.json` identity
+(commits, image digests, task hashes, lease, seeds). See [`docs/run-provenance.md`](docs/run-provenance.md).
+Raw traces stay ignored under `results/runs/`; publish only sanitized bundles. Unattended
+delegation remains disabled until Phase 7.
+
 ## Scenarios
 
 | Scenario | Role | What it grades |
