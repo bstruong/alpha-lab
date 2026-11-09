@@ -1,0 +1,152 @@
+# Machine-readable statistical protocol for Phase 7 qualification.
+# Schema: alpha.statistical_protocol.v1
+# Human companion: docs/statistical-protocol.md
+#
+# This file is predeclared policy. Campaign Jobs and promote gates must load it
+# by protocol_id + protocol_version. Do not edit thresholds after a campaign
+# that will cite this version has started.
+
+schema: alpha.statistical_protocol.v1
+protocol_id: alpha-lab.held_out.first_attempt
+protocol_version: "1.0.0"
+status: scaffolding
+# Active Unattended routes remain disabled until Phases 0–6 merge/deploy and a
+# fresh pinned campaign satisfies every criterion under this exact version.
+unattended_enabled: false
+
+metric:
+  # Machine field remains pass_at_1; user-facing label is First-attempt success.
+  field: pass_at_1
+  user_label: First-attempt success
+  definition: >
+    Binary first-attempt success for one independent held-out trial.
+    Numerator = count of scored, infrastructure-valid trials with pass_at_1 true.
+    Denominator = count of scored, infrastructure-valid trials.
+    Dry-run, partial-suite, and infrastructure-invalid rows are excluded from
+    both numerator and denominator and must be reported separately as invalid
+    or not evaluated.
+  pass_at_k:
+    enabled: false
+    note: Pass@k is out of scope for v1.0.0; do not publish Pass@k as First-attempt success.
+
+counts:
+  require_exact_numerator_denominator: true
+  publish_invalid_trial_counts: true
+  separate_coverage_from_reliability: true
+
+uncertainty:
+  method: wilson_score_interval
+  confidence_level: 0.95
+  sidedness: two_sided
+  # Unattended decisions use the conservative lower bound, never the point estimate alone.
+  unattended_uses: lower_bound
+  never_claim_certainty: true
+  certainty_language_forbidden:
+    - "100% confidence"
+    - "100% certainty"
+    - "proves zero future failures"
+    - "guarantees"
+  observed_success_language: >
+    Observed success: <N>/<D> held-out trials (<point>%). This does not prove
+    zero future failures. Delegation applies only to the tested task scope,
+    model/runtime identity, evidence threshold, and expiry recorded with the run.
+
+sample_size:
+  # Minimum independent held-out trials (effective sample size) before a band
+  # other than Not evaluated / Review required may be considered.
+  min_effective_trials_unattended: 24
+  min_effective_trials_per_task_unattended: 4
+  min_distinct_seeds_per_task_unattended: 4
+  min_distinct_instances_per_task_unattended: 2
+  # Below these floors, statistical_sufficiency must remain inadequate / not_evaluated.
+  min_effective_trials_review_required: 1
+
+per_skill_floors:
+  # Aggregate First-attempt success cannot hide a failed skill lane.
+  unattended:
+    require_every_mandatory_skill: true
+    floor: 1.0
+  review_required:
+    floor: null
+    note: No automatic floor; human review interprets observed rates.
+
+trust_bands:
+  Unattended:
+    requires:
+      - observed_success_rate_equals_1.0
+      - wilson_lower_bound_meets_threshold
+      - min_effective_sample_size
+      - per_skill_floors
+      - oracle_pass_and_nop_fail_baselines
+      - immutable_provenance_promotable
+      - no_critical_semantic_security_privacy_isolation_failure
+      - canonical_run_selected_under_predeclared_rule
+      - unattended_enabled_true_in_protocol
+    wilson_lower_bound_min: 0.85
+    routing_authority: unattended
+  Review required:
+    default_when_active_evidence_index_absent: true
+    routing_authority: review_required
+  Do not delegate:
+    when:
+      - critical_semantic_or_safety_failure
+      - observed_failures_exceed_policy
+    routing_authority: do_not_delegate
+  Not evaluated:
+    when:
+      - missing_incomplete_dry_infra_invalid_expired_or_statistically_inadequate_evidence
+    routing_authority: none
+
+canonical_rerun:
+  max_attempts: 3
+  # Declared before execution. Do not choose the best of N after seeing scores.
+  selection_rule: >
+    Among complete, infrastructure-valid, provenance-promotable attempts for the
+    same (model_id, quantization, scenario_id, profile, fixture_set_hash,
+    protocol_version), select the earliest attempt by campaign started_at whose
+    run_manifest terminal_status is ok. Infrastructure-invalid attempts do not
+    consume the attempt budget for model scoring but must be retained as evidence.
+  discard_after_seeing_scores: false
+  preserve_attempt_lineage: true
+
+coverage_vs_reliability:
+  task_coverage:
+    definition: >
+      Which tasks/skills were attempted at least once under the declared
+      evaluation mode. Coverage answers "was this capability exercised?"
+    schema_fields:
+      - coverage.tasks_attempted
+      - coverage.skills_attempted
+      - coverage.tasks_not_evaluated
+  repeated_trial_reliability:
+    definition: >
+      Per-task and per-skill First-attempt success rates across independent
+      seeds/instances, with exact N/D and uncertainty intervals.
+    schema_fields:
+      - reliability.per_task
+      - reliability.per_skill
+      - reliability.aggregate
+
+held_out:
+  require_parameterized_fixtures: true
+  agent_visible: false
+  bind_to_fixture_set_hash: true
+  seed_declaration: scenarios/<id>/held_out/trial_plan.yml
+
+baselines:
+  require_oracle_pass: true
+  require_nop_fail: true
+  bind_to_scenario_hash_and_harness_rev: true
+
+evidence_index:
+  active_index_required_for_unattended: true
+  absent_index_fail_closed_band: Review required
+  archive_dirs_never_routable:
+    - qualifications/archive-v1
+    - qualifications/archive-v2-pre-simplification
+    - qualifications/archive-sinatra
+
+execution:
+  graded_host: watchtower_job_only
+  laptop_may: [submit, monitor, retrieve_artifacts]
+  laptop_must_not: [host_graded_runner, own_lease, provide_heartbeat]

@@ -44,6 +44,27 @@ Promotable evidence must carry immutable `provenance` + `run_manifest.json` iden
 Raw traces stay ignored under `results/runs/`; publish only sanitized bundles. Unattended
 delegation remains disabled until Phase 7.
 
+## Phase 7 scaffolding (no live campaigns in this PR)
+
+Versioned statistical protocol, outcome-first report shape, held-out seed/instance
+declarations, and the post-deploy campaign runbook live under `schemas/` + `docs/`.
+Active evidence index and **Unattended** routes stay absent / fail-closed.
+
+```bash
+./scripts/validate-phase7-scaffold.sh
+./scripts/render-outcome-report.py --fixture scripts/fixtures/sample-summary.json | head
+```
+
+| Doc | Purpose |
+|---|---|
+| [`schemas/statistical-protocol.v1.yml`](schemas/statistical-protocol.v1.yml) | First-attempt success, N/D, Wilson intervals, floors, trust bands, rerun rules |
+| [`docs/statistical-protocol.md`](docs/statistical-protocol.md) | Human companion; coverage vs reliability |
+| [`docs/outcome-first-report.md`](docs/outcome-first-report.md) | Can do / Cannot / Not evaluated / Delegation / Evidence limits |
+| [`docs/fresh-campaigns-after-deploy.md`](docs/fresh-campaigns-after-deploy.md) | Watchtower Job, pinned digests, walk-away (after Phases 0–6 deploy) |
+
+Do **not** run live GPU campaigns or `bin/alpha qualify --manifest` until Phases 0–6
+are merged/deployed and a fresh held-out Job meets every protocol criterion.
+
 ## Scenarios
 
 | Scenario | Role | What it grades |

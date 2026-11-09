@@ -1,0 +1,47 @@
+# Held-out ranking — second parameterized CRM candidate table.
+id: rank-from-candidates__case-02
+task: rank-from-candidates
+skill: crm_rank
+rung: L1
+agent_visible: false
+instance: 2
+parameterization:
+  as_of: "2026-11-18"
+instruction: |
+  Sort CRM-emitted candidates with the same priority rules as shipping:
+  follow_up_due (by next_follow_up_due asc), then stale_prospect (by captured_on asc),
+  then sunday_gap (input order). Emit all candidates. Exclude non-candidates.
+
+  Candidates (as_of 2026-11-18):
+  | contact_name | kind | next_follow_up_due | captured_on | notes |
+  |---|---|---|---|---|
+  | Mira Cole | *(not a candidate — due 2026-12-01)* | 2026-12-01 | — | exclude |
+  | Partner Newsletter | *(newsletter noise)* | — | — | exclude |
+  | Riley Soto | follow_up_due | 2026-11-05 | — | |
+  | Casey Nguyen | stale_prospect | — | 2026-10-08 | |
+  | Wednesday Queue | sunday_gap | — | — | |
+expected_json_values:
+  as_of: "2026-11-18"
+required_json_markers:
+  - '"rank"\s*:\s*1[^}]*"Riley Soto"'
+  - '"rank"\s*:\s*2[^}]*"Casey Nguyen"'
+  - '"rank"\s*:\s*3[^}]*"Wednesday Queue"'
+  - follow_up_due
+  - stale_prospect
+  - sunday_gap
+denied_json_patterns:
+  noise_included: "Mira Cole|Partner Newsletter"
+  public_shipping_leak: "Maya Chen|Jordan Lee|Sunday Checklist|Promo Digest|Sam Okonkwo"
+  sibling_held_out_leak: "Avery Quinn|Noah Park|Monday Backlog"
+oracle_output:
+  as_of: "2026-11-18"
+  ranked:
+    - rank: 1
+      contact_name: Riley Soto
+      kind: follow_up_due
+    - rank: 2
+      contact_name: Casey Nguyen
+      kind: stale_prospect
+    - rank: 3
+      contact_name: Wednesday Queue
+      kind: sunday_gap

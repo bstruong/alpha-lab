@@ -1,0 +1,47 @@
+# Held-out L0 fill — second parameterized instance (different names/kinds/date).
+id: rank-fill-template__case-02
+task: rank-fill-template
+skill: crm_rank
+rung: L0
+agent_visible: false
+instance: 2
+parameterization:
+  as_of: "2026-11-18"
+  contacts:
+    - name: Riley Soto
+      kind: follow_up_due
+    - name: Casey Nguyen
+      kind: stale_prospect
+    - name: Wednesday Queue
+      kind: sunday_gap
+instruction: |
+  Fill the ranking JSON template. as_of must be 2026-11-18.
+  Rank exactly:
+  1. Riley Soto — kind follow_up_due
+  2. Casey Nguyen — kind stale_prospect
+  3. Wednesday Queue — kind sunday_gap
+  Each ranked item must include rank, contact_name, and kind.
+expected_json_values:
+  as_of: "2026-11-18"
+required_json_markers:
+  - Riley Soto
+  - Casey Nguyen
+  - Wednesday Queue
+  - follow_up_due
+  - stale_prospect
+  - sunday_gap
+denied_json_patterns:
+  public_shipping_leak: "Maya Chen|Jordan Lee|Sunday Checklist"
+  sibling_held_out_leak: "Avery Quinn|Noah Park|Monday Backlog"
+oracle_output:
+  as_of: "2026-11-18"
+  ranked:
+    - rank: 1
+      contact_name: Riley Soto
+      kind: follow_up_due
+    - rank: 2
+      contact_name: Casey Nguyen
+      kind: stale_prospect
+    - rank: 3
+      contact_name: Wednesday Queue
+      kind: sunday_gap

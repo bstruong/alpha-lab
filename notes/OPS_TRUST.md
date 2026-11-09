@@ -4,8 +4,10 @@
 
 There is **no active evidence index**, and therefore **no** `Own` or
 **Unattended** routes. Every Alpha role is **Review required** until a
-fresh pinned qualification campaign meets the post-simplification
-delegation policy (Phase 7).
+fresh pinned qualification campaign meets
+`schemas/statistical-protocol.v1.yml` after Phases 0–6 deploy. Phase 7
+scaffolding (protocol, report shape, held-out seeds) does **not** enable
+routes by itself.
 
 | Role | Primary local model | Band | Notes |
 |---|---|---|---|
