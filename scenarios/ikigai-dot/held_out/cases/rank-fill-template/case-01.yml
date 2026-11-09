@@ -1,0 +1,36 @@
+# Held-out L0 fill — different names/kinds than the public shipping prompt.
+id: rank-fill-template__case-01
+task: rank-fill-template
+skill: crm_rank
+rung: L0
+agent_visible: false
+instruction: |
+  Fill the ranking JSON template. as_of must be 2026-11-12.
+  Rank exactly:
+  1. Avery Quinn — kind follow_up_due
+  2. Noah Park — kind stale_prospect
+  3. Monday Backlog — kind sunday_gap
+  Each ranked item must include rank, contact_name, and kind.
+expected_json_values:
+  as_of: "2026-11-12"
+required_json_markers:
+  - Avery Quinn
+  - Noah Park
+  - Monday Backlog
+  - follow_up_due
+  - stale_prospect
+  - sunday_gap
+denied_json_patterns:
+  public_shipping_leak: "Maya Chen|Jordan Lee|Sunday Checklist"
+oracle_output:
+  as_of: "2026-11-12"
+  ranked:
+    - rank: 1
+      contact_name: Avery Quinn
+      kind: follow_up_due
+    - rank: 2
+      contact_name: Noah Park
+      kind: stale_prospect
+    - rank: 3
+      contact_name: Monday Backlog
+      kind: sunday_gap

@@ -33,6 +33,23 @@ Graded benchmark suites must execute only as Watchtower/homelab campaign
 Jobs. Laptops/workstations are launch/monitor clients only and must not
 host graded runners.
 
+## Phase 3 promote prerequisites (fail closed)
+
+Before any future Phase 7 promote of a shipping qualification:
+
+1. Shipping/measurement prompts must not include answer-bearing `invariant.md`
+   (`include_invariant: false`). Oracle/debug profiles may include them.
+2. Held-out fixtures under `scenarios/<id>/held_out/` must exist, hash-match
+   `fixture_set.yml`, and remain invisible to evaluated agents.
+3. Matching `baselines/<id>/oracle-pass__<scenario_hash>__<harness_rev>.json`
+   and `nop-fail__…json` artifacts must both have `observed_ok: true` for the
+   exact scenario content hash and Alpha harness revision. Do not invent green
+   control results.
+4. Do not regenerate this directory’s active evidence index or Unattended /
+   delegation views until Phase 7 acceptance.
+
+See `../baselines/README.md` and `../scripts/validate-phase3-evidence-rules.sh`.
+
 Publication (after a Watchtower campaign) still looks like:
 
 ```bash

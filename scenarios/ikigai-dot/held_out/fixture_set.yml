@@ -1,0 +1,28 @@
+schema: alpha.held_out_fixture_set.v1
+scenario_id: ikigai-dot
+# Content hash over every file under held_out/ except this manifest.
+# Algorithm: sha256 over sorted relative paths + NUL + file bytes + NUL.
+fixture_set_hash: ad6ba0d9bfc0072f7ce03e7a591498f57e32001b574f1803ae4594117576fb06
+hash_algorithm: sha256-path-bytes-v1
+agent_visible: false
+phase: 3
+cases:
+  - id: rank-fill-template__case-01
+    path: cases/rank-fill-template/case-01.yml
+    task: rank-fill-template
+  - id: rank-from-candidates__case-01
+    path: cases/rank-from-candidates/case-01.yml
+    task: rank-from-candidates
+  - id: scorecard-apply-rules__case-01
+    path: cases/scorecard-apply-rules/case-01.yml
+    task: scorecard-apply-rules
+  - id: draft-outreach__case-01
+    path: cases/draft-outreach/case-01.yml
+    task: draft-outreach
+  - id: isolation-grounding__case-01
+    path: cases/isolation-grounding/case-01.yml
+    task: isolation-grounding
+notes: |
+  Phase 3 scaffolds held-out cases hidden from evaluated agents.
+  Phase 7 binds multi-seed qualification campaigns to this fixture_set_hash.
+  Do not regenerate an active evidence index until Phase 7 acceptance.

@@ -1,0 +1,56 @@
+{
+  "alpha_followup": "Prefer TrialOutcome to treat exit_reason=nop + missing output as scored fail, not infrastructure_invalid.",
+  "command": [
+    "bin/alpha",
+    "run",
+    "--scenario",
+    "ikigai-dot",
+    "--executor",
+    "nop",
+    "--no-gate-halt",
+    "--profile",
+    "shipping"
+  ],
+  "control": "nop-fail",
+  "exit_code": 1,
+  "expected": "empty nop agent receives no graded credit (scored fails or nop-induced invalid trials)",
+  "fixture_set_hash": "ad6ba0d9bfc0072f7ce03e7a591498f57e32001b574f1803ae4594117576fb06",
+  "harness_dirty": false,
+  "harness_repo": "/tmp/alpha-phase3-inv",
+  "harness_rev": "60037e6f80f168d8f959e2f391101379596672fe",
+  "note": "Integrity baseline only. Phase 7 promote requires matching hashes, observed_ok=true on both controls, clean harness_rev, and Watchtower Job evidence.",
+  "observed_ok": true,
+  "promotable": true,
+  "recorded_at": "20261109T212115Z",
+  "scenario_hash": "1d87acb17ffe28e83ab94832442cddcf97557a110c62c7ce7f6978696c6bd8b2",
+  "scenario_id": "ikigai-dot",
+  "schema": "alpha.baseline.v1",
+  "summary": {
+    "aggregate": {
+      "pass_at_1": 0.0,
+      "tasks_passed": 0,
+      "tasks_total": 5
+    },
+    "fail_count": 5,
+    "log_sha256": "9c247cf775b49c0a5608b575dddf2318a1830353dc1d67d4ba0114ddfce98577",
+    "pass_count": 0,
+    "tail": [
+      "=== Alpha Run: 20261109T212116Z-ikigai-dot ===",
+      "Scenario: ikigai-dot | Model:  | Profile: shipping",
+      "Thinking: low | Suite complete: true",
+      "Tasks: rank-fill-template, rank-from-candidates, scorecard-apply-rules, draft-outreach, isolation-grounding",
+      "",
+      "[1/5] rank-fill-template (graded) trial 1/1 ... \u2717 FAIL (format) in 0.0s (tools: 0)",
+      "[2/5] rank-from-candidates (graded) trial 1/1 ... \u2717 FAIL (format) in 0.0s (tools: 0)",
+      "[3/5] scorecard-apply-rules (graded) trial 1/1 ... \u2717 FAIL (format) in 0.0s (tools: 0)",
+      "[4/5] draft-outreach (graded) trial 1/1 ... \u2717 FAIL (format) in 0.0s (tools: 0)",
+      "[5/5] isolation-grounding (graded) trial 1/1 ... \u2717 FAIL (format) in 0.0s (tools: 0)",
+      "",
+      "Summary written to: /tmp/alpha-lab-baselines.mSvZZw/alpha-root/results/runs/20261109T212116Z-ikigai-dot/summary.json",
+      "Report written to:  /tmp/alpha-lab-baselines.mSvZZw/alpha-root/reports/20261109T212116Z-ikigai-dot.md",
+      "First-attempt success: 0.0 (0/5)",
+      "Highest rung: \u2014",
+      "Execution health: ok | Gate: not_applicable | Benchmark: fail"
+    ]
+  }
+}

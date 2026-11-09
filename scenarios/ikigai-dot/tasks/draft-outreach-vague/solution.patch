@@ -1,0 +1,10 @@
+--- /dev/null
++++ b/output.txt
+@@ -0,0 +1,7 @@
++{
++  "channel": "cold_email",
++  "contact_name": "Priya Nair",
++  "subject": "Quick note from SF Ruby",
++  "body": "Priya — enjoyed your Latticeforge observability talk at SF Ruby.",
++  "grounding_facts": ["Latticeforge", "SF Ruby", "observability"]
++}

@@ -1,0 +1,24 @@
+name: rank-fill-template
+kind: graded
+expected_seed: 0
+executor: openai_chat_completions
+grader: json_schema
+thinking_level: none
+json_mode: true
+skill: crm_rank
+rung: L0
+scaffold: recipe
+required_json_keys:
+- as_of
+- ranked
+nested_json_keys:
+  ranked:
+  - rank
+  - contact_name
+  - kind
+expected_json_values:
+  as_of: '2026-11-06'
+required_json_markers:
+- Maya Chen
+- Jordan Lee
+- Sunday Checklist

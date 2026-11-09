@@ -1,0 +1,43 @@
+# Held-out ranking — alternate CRM candidate table (not in public instruction.md).
+id: rank-from-candidates__case-01
+task: rank-from-candidates
+skill: crm_rank
+rung: L1
+agent_visible: false
+instruction: |
+  Sort CRM-emitted candidates with the same priority rules as shipping:
+  follow_up_due (by next_follow_up_due asc), then stale_prospect (by captured_on asc),
+  then sunday_gap (input order). Emit all candidates. Exclude non-candidates.
+
+  Candidates (as_of 2026-11-12):
+  | contact_name | kind | next_follow_up_due | captured_on | notes |
+  |---|---|---|---|---|
+  | Kai Mendes | *(not a candidate — due 2026-11-30)* | 2026-11-30 | — | exclude |
+  | Vendor Blast | *(newsletter noise)* | — | — | exclude |
+  | Avery Quinn | follow_up_due | 2026-11-01 | — | |
+  | Noah Park | stale_prospect | — | 2026-10-02 | |
+  | Monday Backlog | sunday_gap | — | — | |
+expected_json_values:
+  as_of: "2026-11-12"
+required_json_markers:
+  - '"rank"\s*:\s*1[^}]*"Avery Quinn"'
+  - '"rank"\s*:\s*2[^}]*"Noah Park"'
+  - '"rank"\s*:\s*3[^}]*"Monday Backlog"'
+  - follow_up_due
+  - stale_prospect
+  - sunday_gap
+denied_json_patterns:
+  noise_included: "Kai Mendes|Vendor Blast"
+  public_shipping_leak: "Maya Chen|Jordan Lee|Sunday Checklist|Promo Digest|Sam Okonkwo"
+oracle_output:
+  as_of: "2026-11-12"
+  ranked:
+    - rank: 1
+      contact_name: Avery Quinn
+      kind: follow_up_due
+    - rank: 2
+      contact_name: Noah Park
+      kind: stale_prospect
+    - rank: 3
+      contact_name: Monday Backlog
+      kind: sunday_gap

@@ -8,21 +8,43 @@ default_model: gemma4-4b
 #   1–2  rule-application (deterministic product core; model must follow stated rules exactly)
 #   3    LLM gap (draft copy)
 #   4    hybrid safety (code would short-circuit; model must still abstain)
+#
+# Answer-bearing invariant.md files stay on disk for oracle/debug profiles only.
+# Shipping and measurement evaluated prompts must not include them (include_invariant: false).
+# Held-out qualification cases live under held_out/ (never mounted into the agent sandbox).
 tasks:
+  - rank-fill-template
   - rank-from-candidates
   - scorecard-apply-rules
   - draft-outreach
   - isolation-grounding
+  - draft-outreach-vague
 budget:
   wall_seconds: 45
   max_tool_calls: 0
 qualification:
   gate_pass_at_1: 1.0
   graded_pass_at_1: 0.75
+  # Phase 3: promote requires matching oracle-pass + nop-fail baselines for this
+  # scenario content hash and Alpha harness revision (see baselines/README.md).
+  require_baselines: true
 profiles:
   shipping:
     bullet_cap: true
-    include_invariant: true
+    include_invariant: false
+    max_rung: L2
   measurement:
     bullet_cap: false
     include_invariant: false
+    max_rung: L4
+  # Harness must honor Profile#include_invariant (Alpha follow-up). Until then,
+  # Runner passes a Profile object whose to_s is not "shipping", so invariants
+  # are already omitted on the agent path — do not rely on that accident.
+  oracle:
+    bullet_cap: false
+    include_invariant: true
+    max_rung: L4
+  debug:
+    bullet_cap: false
+    include_invariant: true
+    max_rung: L4

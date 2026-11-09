@@ -1,0 +1,42 @@
+# Held-out scorecard — same R1–R5 table, different fact record than shipping.
+id: scorecard-apply-rules__case-01
+task: scorecard-apply-rules
+skill: crm_scorecard
+rung: L1
+agent_visible: false
+instruction: |
+  Apply mapping rules R1–R5 to the structured facts below. Output exact ints.
+
+  Facts:
+  {
+    "contact_name": "Riley Cho",
+    "fundraising_help": true,
+    "offered_informal_advisor": true,
+    "lp_intros_last_quarter": 2,
+    "coffee_cadence": "monthly",
+    "domain_overlap": ["rails_saas"]
+  }
+expected_json_values:
+  goal_importance: 4
+  ring_level: 4
+  value_exchange: 4
+  past_interaction_freq: 3
+  objective_alignment: 4
+  soi_ring: board_of_advisors
+required_json_markers:
+  - R1
+  - R2
+  - R3
+  - R4
+  - R5
+denied_json_patterns:
+  public_shipping_leak: "Elena Vargas"
+  wrong_freq: '"past_interaction_freq"\s*:\s*[124]'
+oracle_output:
+  goal_importance: 4
+  ring_level: 4
+  value_exchange: 4
+  past_interaction_freq: 3
+  objective_alignment: 4
+  soi_ring: board_of_advisors
+  applied_rules: [R1, R2, R3, R4, R5]
