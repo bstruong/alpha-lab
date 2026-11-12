@@ -1,0 +1,32 @@
+{
+  "schema": "alpha.qualification.v2",
+  "model_id": "qwen25-coder-14b",
+  "engine_preset": "qwen25-coder-14b",
+  "prompt_preset": "shipping",
+  "role": "sanitizer",
+  "alpha_run_id": "20261109T164005Z-pii-scrubbing",
+  "scenario_id": "pii-scrubbing",
+  "pass_at_1": 1.0,
+  "gate_pass_at_1": 1.0,
+  "graded_pass_at_1": 1.0,
+  "max_rung": "L1",
+  "ceiling_rung": "L2",
+  "credit_mean": 1.0,
+  "failure_class_histogram": {
+    "none": 2
+  },
+  "ship_skills": [
+    {
+      "skill": "pii_scrub",
+      "max_rung": "L1",
+      "pass_at_1": 1.0,
+      "credit_mean": 1.0
+    }
+  ],
+  "qualified": true,
+  "report_uri": "reports/20261109T164005Z-pii-scrubbing.md",
+  "qualified_at": "2026-11-09T16:40:24Z",
+  "expires_at": "2026-12-09T16:40:24Z",
+  "node_class": "lab-gpu-32g",
+  "measurement_run_id": "20261109T164020Z-pii-scrubbing"
+}

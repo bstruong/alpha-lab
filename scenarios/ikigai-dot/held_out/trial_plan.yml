@@ -1,0 +1,54 @@
+# Declared seeds and parameterized instances for Phase 7 held-out campaigns.
+# Schema: alpha.held_out_trial_plan.v1
+# Bound by fixture_set.yml (changing this file changes fixture_set_hash).
+#
+# Scaffolding only: do not execute graded campaigns from this plan until
+# Phases 0–6 are deployed. Unattended remains disabled.
+
+schema: alpha.held_out_trial_plan.v1
+scenario_id: ikigai-dot
+protocol_id: alpha-lab.held_out.first_attempt
+protocol_version: "1.0.0"
+agent_visible: false
+evaluation_mode: shipping
+
+# Task coverage: one attempt proves the task was exercised.
+# Repeated-trial reliability: require the full seed × instance grid below.
+coverage:
+  tasks:
+    - rank-fill-template
+    - rank-from-candidates
+    - scorecard-apply-rules
+    - draft-outreach
+    - isolation-grounding
+  skills:
+    - crm_rank
+    - crm_scorecard
+    - crm_draft
+    - crm_isolation
+  excluded_from_shipping_qualification:
+    - draft-outreach-vague  # measurement ceiling only (L3)
+
+reliability:
+  # Independent RNG seeds for repeated trials (not expected_seed oracle checks).
+  seeds: [1001, 1002, 1003, 1004]
+  # Minimum grid for future Unattended consideration under protocol v1.0.0.
+  min_seeds_per_task: 4
+  min_instances_per_task: 2
+  trials_per_seed_instance: 1
+
+instances:
+  - task: rank-fill-template
+    case_ids: [rank-fill-template__case-01, rank-fill-template__case-02]
+  - task: rank-from-candidates
+    case_ids: [rank-from-candidates__case-01, rank-from-candidates__case-02]
+  - task: scorecard-apply-rules
+    case_ids: [scorecard-apply-rules__case-01, scorecard-apply-rules__case-02]
+  - task: draft-outreach
+    case_ids: [draft-outreach__case-01, draft-outreach__case-02]
+  - task: isolation-grounding
+    case_ids: [isolation-grounding__case-01, isolation-grounding__case-02]
+
+canonical_rerun:
+  max_attempts: 3
+  selection_rule: earliest_promotable_ok

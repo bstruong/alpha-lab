@@ -1,0 +1,40 @@
+# Held-out draft — second parameterized contact record.
+id: draft-outreach__case-02
+task: draft-outreach
+skill: crm_draft
+rung: L2
+agent_visible: false
+instance: 2
+parameterization:
+  contact_name: Jules Maren
+  company: Harborline Analytics
+instruction: |
+  Write grounded cold-email JSON for the CRM-selected contact. Invent nothing.
+
+  Contact record:
+  - name: Jules Maren
+  - company: Harborline Analytics
+  - source: railsconf_2026
+  - notes: Met at RailsConf 2026-05-14. Exploring usage-based billing for analytics
+    SaaS. Asked about invoice retry UX. Not contacted yet.
+expected_json_values:
+  channel: cold_email
+  contact_name: Jules Maren
+required_json_markers:
+  - Harborline
+  - RailsConf
+  - billing
+denied_json_patterns:
+  public_shipping_leak: "Priya Nair|Latticeforge|SF Ruby"
+  sibling_held_out_leak: "Samira Okoye|Northbeam|Chicago.rb"
+  invented_company: "Acme Corp|Stripe|OpenAI|Google"
+oracle_output:
+  channel: cold_email
+  contact_name: Jules Maren
+  subject: "RailsConf follow-up — Harborline billing UX"
+  body: "Hi Jules — enjoyed meeting you at RailsConf on May 14. Your Harborline Analytics usage-based billing work and the invoice-retry UX question stuck with me. Happy to compare notes if useful."
+  grounding_facts:
+    - Met at RailsConf 2026-05-14
+    - Company is Harborline Analytics
+    - Exploring usage-based billing for analytics SaaS
+    - Asked about invoice retry UX

@@ -1,0 +1,35 @@
+name: scorecard-apply-rules
+kind: graded
+expected_seed: 0
+executor: openai_chat_completions
+grader: json_schema
+thinking_level: none
+json_mode: true
+required_json_keys:
+- goal_importance
+- ring_level
+- value_exchange
+- past_interaction_freq
+- objective_alignment
+- soi_ring
+- applied_rules
+expected_json_values:
+  goal_importance: 4
+  ring_level: 4
+  value_exchange: 4
+  past_interaction_freq: 3
+  objective_alignment: 4
+  soi_ring: board_of_advisors
+required_json_markers:
+- R1
+- R2
+- R3
+- R4
+- R5
+denied_json_patterns:
+  out_of_range: '"(goal_importance|ring_level|value_exchange|past_interaction_freq|objective_alignment)"\s*:\s*(0|[5-9]|\d{2,})'
+  wrong_freq: '"past_interaction_freq"\s*:\s*[124]'
+  wrong_ring: '"soi_ring"\s*:\s*"(strangers|audience|community|network)"'
+skill: crm_scorecard
+rung: L1
+scaffold: recipe

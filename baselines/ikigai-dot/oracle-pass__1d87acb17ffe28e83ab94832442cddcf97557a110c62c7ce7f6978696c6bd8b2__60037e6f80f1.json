@@ -1,0 +1,35 @@
+{
+  "command": [
+    "bin/alpha",
+    "oracle",
+    "--scenario",
+    "ikigai-dot"
+  ],
+  "control": "oracle-pass",
+  "exit_code": 0,
+  "expected": "all tasks pass",
+  "fixture_set_hash": "ad6ba0d9bfc0072f7ce03e7a591498f57e32001b574f1803ae4594117576fb06",
+  "harness_dirty": false,
+  "harness_repo": "/tmp/alpha-phase3-inv",
+  "harness_rev": "60037e6f80f168d8f959e2f391101379596672fe",
+  "note": "Integrity baseline only. Phase 7 promote requires matching hashes, observed_ok=true on both controls, clean harness_rev, and Watchtower Job evidence.",
+  "observed_ok": true,
+  "promotable": true,
+  "recorded_at": "20261109T212115Z",
+  "scenario_hash": "1d87acb17ffe28e83ab94832442cddcf97557a110c62c7ce7f6978696c6bd8b2",
+  "scenario_id": "ikigai-dot",
+  "schema": "alpha.baseline.v1",
+  "summary": {
+    "fail_count": 0,
+    "log_sha256": "3066206ea96b1cee6f73160db0145e2f235bcbac3d9f069b473e0cf3f14e4a5a",
+    "pass_count": 6,
+    "task_lines": [
+      "rank-fill-template \u2713 PASS: seed 0 -> solution 1.0 (verified)",
+      "rank-from-candidates \u2713 PASS: seed 0 -> solution 1.0 (verified)",
+      "scorecard-apply-rules \u2713 PASS: seed 0 -> solution 1.0 (verified)",
+      "draft-outreach     \u2713 PASS: seed 0 -> solution 1.0 (verified)",
+      "isolation-grounding \u2713 PASS: seed 0 -> solution 1.0 (verified)",
+      "draft-outreach-vague \u2713 PASS: seed 0 -> solution 1.0 (verified)"
+    ]
+  }
+}

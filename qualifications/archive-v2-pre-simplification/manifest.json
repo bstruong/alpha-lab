@@ -1,0 +1,834 @@
+{
+  "schema": "alpha.qualification_manifest.v2",
+  "generated_at": "2026-11-09T19:44:10Z",
+  "roles": {
+    "crm_ops": {
+      "primary_model": "gemma4-12b",
+      "qualified_models": [
+        {
+          "model_id": "gemma4-12b",
+          "engine_preset": "gemma4-12b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "crm_rank",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "crm_scorecard",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_draft",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ikigai-dot",
+          "report_uri": "reports/20261109T170349Z-ikigai-dot.md",
+          "qualified_at": "2026-11-09T17:04:43Z",
+          "expires_at": "2026-12-09T17:04:43Z",
+          "artifact_file": "gemma4-12b__crm_ops__shipping.json"
+        },
+        {
+          "model_id": "gemma4-27b",
+          "engine_preset": "gemma4-27b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "crm_rank",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "crm_scorecard",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_draft",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ikigai-dot",
+          "report_uri": "reports/20261109T170453Z-ikigai-dot.md",
+          "qualified_at": "2026-11-09T17:06:05Z",
+          "expires_at": "2026-12-09T17:06:05Z",
+          "artifact_file": "gemma4-27b__crm_ops__shipping.json"
+        },
+        {
+          "model_id": "gemma4-4b",
+          "engine_preset": "gemma4-4b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "crm_rank",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "crm_scorecard",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_draft",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ikigai-dot",
+          "report_uri": "reports/20261109T170306Z-ikigai-dot.md",
+          "qualified_at": "2026-11-09T17:03:39Z",
+          "expires_at": "2026-12-09T17:03:39Z",
+          "artifact_file": "gemma4-4b__crm_ops__shipping.json"
+        },
+        {
+          "model_id": "glm47-reap",
+          "engine_preset": "glm47-reap",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "crm_rank",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "crm_scorecard",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_draft",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ikigai-dot",
+          "report_uri": "reports/20261109T165901Z-ikigai-dot.md",
+          "qualified_at": "2026-11-09T16:59:55Z",
+          "expires_at": "2026-12-09T16:59:55Z",
+          "artifact_file": "glm47-reap__crm_ops__shipping.json"
+        },
+        {
+          "model_id": "qwen25-coder-14b",
+          "engine_preset": "qwen25-coder-14b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "crm_rank",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "crm_scorecard",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_draft",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "crm_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ikigai-dot",
+          "report_uri": "reports/20261109T170203Z-ikigai-dot.md",
+          "qualified_at": "2026-11-09T17:02:57Z",
+          "expires_at": "2026-12-09T17:02:57Z",
+          "artifact_file": "qwen25-coder-14b__crm_ops__shipping.json"
+        }
+      ]
+    },
+    "extractor": {
+      "primary_model": "qwen36-coder-hybrid",
+      "qualified_models": [
+        {
+          "model_id": "gemma4-12b",
+          "engine_preset": "gemma4-12b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ocr_extract",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ocr-extraction",
+          "report_uri": "reports/20261109T164436Z-ocr-extraction.md",
+          "qualified_at": "2026-11-09T16:44:59Z",
+          "expires_at": "2026-12-09T16:44:59Z",
+          "artifact_file": "gemma4-12b__extractor__shipping.json"
+        },
+        {
+          "model_id": "glm47-reap",
+          "engine_preset": "glm47-reap",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ocr_extract",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ocr-extraction",
+          "report_uri": "reports/20261109T163417Z-ocr-extraction.md",
+          "qualified_at": "2026-11-09T16:34:39Z",
+          "expires_at": "2026-12-09T16:34:39Z",
+          "artifact_file": "glm47-reap__extractor__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ocr_extract",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ocr-extraction",
+          "report_uri": "reports/20261109T163801Z-ocr-extraction.md",
+          "qualified_at": "2026-11-09T16:38:47Z",
+          "expires_at": "2026-12-09T16:38:47Z",
+          "artifact_file": "qwen36-coder-hybrid__extractor__shipping.json"
+        }
+      ]
+    },
+    "frontend_coder": {
+      "primary_model": "glm47-reap",
+      "qualified_models": [
+        {
+          "model_id": "glm47-reap",
+          "engine_preset": "glm47-reap",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L3",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "frontend_html",
+              "max_rung": "L0",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "frontend_css",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "frontend-coding",
+          "report_uri": "reports/20261108T210436Z-frontend-coding.md",
+          "qualified_at": "2026-11-08T21:08:35Z",
+          "expires_at": "2026-12-08T21:08:35Z",
+          "artifact_file": "glm47-reap__frontend_coder__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L3",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "frontend_html",
+              "max_rung": "L0",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "frontend_css",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "frontend-coding",
+          "report_uri": "reports/20261108T205121Z-frontend-coding.md",
+          "qualified_at": "2026-11-08T21:04:35Z",
+          "expires_at": "2026-12-08T21:04:35Z",
+          "artifact_file": "qwen36-coder-hybrid__frontend_coder__shipping.json"
+        }
+      ]
+    },
+    "hotwire_coder": {
+      "primary_model": "glm47-reap",
+      "qualified_models": [
+        {
+          "model_id": "glm47-reap",
+          "engine_preset": "glm47-reap",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "hotwire_turbo_frame",
+              "max_rung": "L0",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "hotwire_stimulus",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "hotwire-coding",
+          "report_uri": "reports/20261108T212938Z-hotwire-coding.md",
+          "qualified_at": "2026-11-08T21:40:24Z",
+          "expires_at": "2026-12-08T21:40:24Z",
+          "artifact_file": "glm47-reap__hotwire_coder__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L3",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "hotwire_turbo_frame",
+              "max_rung": "L0",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "hotwire_stimulus",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "hotwire-coding",
+          "report_uri": "reports/20261108T210836Z-hotwire-coding.md",
+          "qualified_at": "2026-11-08T21:29:37Z",
+          "expires_at": "2026-12-08T21:29:37Z",
+          "artifact_file": "qwen36-coder-hybrid__hotwire_coder__shipping.json"
+        }
+      ]
+    },
+    "ledger_coder": {
+      "primary_model": "glm47-reap",
+      "qualified_models": [
+        {
+          "model_id": "glm47-reap",
+          "engine_preset": "glm47-reap",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L1",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ledger_recon",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ledger-coding",
+          "report_uri": "reports/20261108T172447Z-ledger-coding.md",
+          "qualified_at": "2026-11-08T17:26:02Z",
+          "expires_at": "2026-12-08T17:26:02Z",
+          "artifact_file": "glm47-reap__ledger_coder__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L1",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ledger_recon",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ledger-coding",
+          "report_uri": "reports/20261108T164722Z-ledger-coding.md",
+          "qualified_at": "2026-11-08T16:52:23Z",
+          "expires_at": "2026-12-08T16:52:23Z",
+          "artifact_file": "qwen36-coder-hybrid__ledger_coder__shipping.json"
+        }
+      ]
+    },
+    "ruby_coder": {
+      "primary_model": "glm47-reap",
+      "qualified_models": [
+        {
+          "model_id": "glm47-reap",
+          "engine_preset": "glm47-reap",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ruby_money",
+              "max_rung": "L0",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "ruby_cli",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ruby-coding",
+          "report_uri": "reports/20261108T204000Z-ruby-coding.md",
+          "qualified_at": "2026-11-08T20:51:21Z",
+          "expires_at": "2026-12-08T20:51:21Z",
+          "artifact_file": "glm47-reap__ruby_coder__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L3",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "ruby_money",
+              "max_rung": "L0",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "ruby_cli",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "ruby-coding",
+          "report_uri": "reports/20261108T202437Z-ruby-coding.md",
+          "qualified_at": "2026-11-08T20:40:00Z",
+          "expires_at": "2026-12-08T20:40:00Z",
+          "artifact_file": "qwen36-coder-hybrid__ruby_coder__shipping.json"
+        }
+      ]
+    },
+    "sanitizer": {
+      "primary_model": "gemma4-4b",
+      "qualified_models": [
+        {
+          "model_id": "gemma4-12b",
+          "engine_preset": "gemma4-12b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "pii_scrub",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "pii-scrubbing",
+          "report_uri": "reports/20261109T164406Z-pii-scrubbing.md",
+          "qualified_at": "2026-11-09T16:44:25Z",
+          "expires_at": "2026-12-09T16:44:25Z",
+          "artifact_file": "gemma4-12b__sanitizer__shipping.json"
+        },
+        {
+          "model_id": "gemma4-27b",
+          "engine_preset": "gemma4-27b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "pii_scrub",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "pii-scrubbing",
+          "report_uri": "reports/20261109T164640Z-pii-scrubbing.md",
+          "qualified_at": "2026-11-09T16:47:01Z",
+          "expires_at": "2026-12-09T16:47:01Z",
+          "artifact_file": "gemma4-27b__sanitizer__shipping.json"
+        },
+        {
+          "model_id": "gemma4-4b",
+          "engine_preset": "gemma4-4b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "pii_scrub",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "pii-scrubbing",
+          "report_uri": "reports/20261109T164154Z-pii-scrubbing.md",
+          "qualified_at": "2026-11-09T16:42:11Z",
+          "expires_at": "2026-12-09T16:42:11Z",
+          "artifact_file": "gemma4-4b__sanitizer__shipping.json"
+        },
+        {
+          "model_id": "qwen25-coder-14b",
+          "engine_preset": "qwen25-coder-14b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "pii_scrub",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "pii-scrubbing",
+          "report_uri": "reports/20261109T164005Z-pii-scrubbing.md",
+          "qualified_at": "2026-11-09T16:40:24Z",
+          "expires_at": "2026-12-09T16:40:24Z",
+          "artifact_file": "qwen25-coder-14b__sanitizer__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 1.0,
+          "max_rung": "L1",
+          "ceiling_rung": "L2",
+          "credit_mean": 1.0,
+          "ship_skills": [
+            {
+              "skill": "pii_scrub",
+              "max_rung": "L1",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "pii-scrubbing",
+          "report_uri": "reports/20261109T163727Z-pii-scrubbing.md",
+          "qualified_at": "2026-11-09T16:37:52Z",
+          "expires_at": "2026-12-09T16:37:52Z",
+          "artifact_file": "qwen36-coder-hybrid__sanitizer__shipping.json"
+        }
+      ]
+    },
+    "triager": {
+      "primary_model": "qwen36-coder-hybrid",
+      "qualified_models": [
+        {
+          "model_id": "gemma4-12b",
+          "engine_preset": "gemma4-12b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "triage_priority",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "triage_security",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_actions",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "email-triage",
+          "report_uri": "reports/20261109T164253Z-email-triage.md",
+          "qualified_at": "2026-11-09T16:43:56Z",
+          "expires_at": "2026-12-09T16:43:56Z",
+          "artifact_file": "gemma4-12b__triager__shipping.json"
+        },
+        {
+          "model_id": "gemma4-27b",
+          "engine_preset": "gemma4-27b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "triage_priority",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "triage_security",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_actions",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "email-triage",
+          "report_uri": "reports/20261109T164509Z-email-triage.md",
+          "qualified_at": "2026-11-09T16:46:30Z",
+          "expires_at": "2026-12-09T16:46:30Z",
+          "artifact_file": "gemma4-27b__triager__shipping.json"
+        },
+        {
+          "model_id": "gemma4-4b",
+          "engine_preset": "gemma4-4b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "triage_priority",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "triage_security",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_actions",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "email-triage",
+          "report_uri": "reports/20261109T164107Z-email-triage.md",
+          "qualified_at": "2026-11-09T16:41:44Z",
+          "expires_at": "2026-12-09T16:41:44Z",
+          "artifact_file": "gemma4-4b__triager__shipping.json"
+        },
+        {
+          "model_id": "qwen25-coder-14b",
+          "engine_preset": "qwen25-coder-14b",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "triage_priority",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "triage_security",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_actions",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "email-triage",
+          "report_uri": "reports/20261109T163857Z-email-triage.md",
+          "qualified_at": "2026-11-09T16:39:55Z",
+          "expires_at": "2026-12-09T16:39:55Z",
+          "artifact_file": "qwen25-coder-14b__triager__shipping.json"
+        },
+        {
+          "model_id": "qwen36-coder-hybrid",
+          "engine_preset": "qwen36-coder-hybrid",
+          "prompt_preset": "shipping",
+          "pass_at_1": 0.8,
+          "max_rung": "L2",
+          "ceiling_rung": "L2",
+          "credit_mean": 0.8,
+          "ship_skills": [
+            {
+              "skill": "triage_priority",
+              "max_rung": "L1",
+              "pass_at_1": 0.5,
+              "credit_mean": 0.5
+            },
+            {
+              "skill": "triage_security",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_actions",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            },
+            {
+              "skill": "triage_isolation",
+              "max_rung": "L2",
+              "pass_at_1": 1.0,
+              "credit_mean": 1.0
+            }
+          ],
+          "scenario_id": "email-triage",
+          "report_uri": "reports/20261109T163448Z-email-triage.md",
+          "qualified_at": "2026-11-09T16:37:17Z",
+          "expires_at": "2026-12-09T16:37:17Z",
+          "artifact_file": "qwen36-coder-hybrid__triager__shipping.json"
+        }
+      ]
+    }
+  }
+}

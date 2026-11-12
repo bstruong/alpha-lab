@@ -1,0 +1,35 @@
+# Held-out draft — different contact record than public Priya/Latticeforge prompt.
+id: draft-outreach__case-01
+task: draft-outreach
+skill: crm_draft
+rung: L2
+agent_visible: false
+instruction: |
+  Write grounded cold-email JSON for the CRM-selected contact. Invent nothing.
+
+  Contact record:
+  - name: Samira Okoye
+  - company: Northbeam Systems
+  - source: chicago_rb_meetup
+  - notes: Met at Chicago.rb 2026-11-03. Building billing tooling for Rails SaaS.
+    Asked about dunning workflows. Not contacted yet.
+expected_json_values:
+  channel: cold_email
+  contact_name: Samira Okoye
+required_json_markers:
+  - Northbeam
+  - Chicago.rb
+  - billing
+denied_json_patterns:
+  public_shipping_leak: "Priya Nair|Latticeforge|SF Ruby"
+  invented_company: "Acme Corp|Stripe|OpenAI|Google"
+oracle_output:
+  channel: cold_email
+  contact_name: Samira Okoye
+  subject: "Chicago.rb follow-up — Northbeam billing tooling"
+  body: "Hi Samira — enjoyed meeting you at Chicago.rb on Nov 3. Your Northbeam billing tooling for Rails SaaS and the dunning-workflow question stuck with me. Happy to compare notes if useful."
+  grounding_facts:
+    - Met at Chicago.rb 2026-11-03
+    - Company is Northbeam Systems
+    - Building billing tooling for Rails SaaS
+    - Asked about dunning workflows

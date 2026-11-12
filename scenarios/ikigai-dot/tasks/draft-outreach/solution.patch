@@ -1,0 +1,15 @@
+--- /dev/null
++++ b/output.txt
+@@ -0,0 +1,12 @@
++{
++  "channel": "cold_email",
++  "contact_name": "Priya Nair",
++  "subject": "SF Ruby follow-up — Latticeforge observability + Sidekiq",
++  "body": "Hi Priya — great meeting you at the SF Ruby meetup on Oct 28. I've been thinking about Latticeforge's observability tooling for Rails apps and your question about multi-tenant Sidekiq at scale. I know a couple of operators in that seat and would be happy to make a focused intro if useful. No pressure either way — just wanted to keep the thread warm. — Brian",
++  "grounding_facts": [
++    "Met at SF Ruby meetup 2026-10-28",
++    "Company is Latticeforge",
++    "Building observability tooling for Rails apps",
++    "Asked for intro re multi-tenant Sidekiq at scale"
++  ]
++}

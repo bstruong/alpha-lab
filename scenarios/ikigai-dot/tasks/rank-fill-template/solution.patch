@@ -1,0 +1,4 @@
+--- /dev/null
++++ b/output.txt
+@@ -0,0 +1 @@
++{"as_of":"2026-11-06","ranked":[{"rank":1,"contact_name":"Maya Chen","kind":"follow_up_due"},{"rank":2,"contact_name":"Jordan Lee","kind":"stale_prospect"},{"rank":3,"contact_name":"Sunday Checklist","kind":"sunday_gap"}]}

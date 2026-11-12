@@ -1,0 +1,60 @@
+schema: alpha.held_out_fixture_set.v1
+scenario_id: ikigai-dot
+# Content hash over every file under held_out/ except this manifest.
+# Algorithm: sha256 over sorted relative paths + NUL + file bytes + NUL.
+fixture_set_hash: dfe8a630ad1307a01019ad355ea7d6fd99d662cb58c0a3da9f99c0a7fc655854
+hash_algorithm: sha256-path-bytes-v1
+agent_visible: false
+phase: 7
+protocol_id: alpha-lab.held_out.first_attempt
+protocol_version: "1.0.0"
+trial_plan: trial_plan.yml
+# Coverage (task exercised) is distinct from reliability (repeated seeds/instances).
+separates_coverage_from_reliability: true
+cases:
+  - id: rank-fill-template__case-01
+    path: cases/rank-fill-template/case-01.yml
+    task: rank-fill-template
+    instance: 1
+  - id: rank-fill-template__case-02
+    path: cases/rank-fill-template/case-02.yml
+    task: rank-fill-template
+    instance: 2
+  - id: rank-from-candidates__case-01
+    path: cases/rank-from-candidates/case-01.yml
+    task: rank-from-candidates
+    instance: 1
+  - id: rank-from-candidates__case-02
+    path: cases/rank-from-candidates/case-02.yml
+    task: rank-from-candidates
+    instance: 2
+  - id: scorecard-apply-rules__case-01
+    path: cases/scorecard-apply-rules/case-01.yml
+    task: scorecard-apply-rules
+    instance: 1
+  - id: scorecard-apply-rules__case-02
+    path: cases/scorecard-apply-rules/case-02.yml
+    task: scorecard-apply-rules
+    instance: 2
+  - id: draft-outreach__case-01
+    path: cases/draft-outreach/case-01.yml
+    task: draft-outreach
+    instance: 1
+  - id: draft-outreach__case-02
+    path: cases/draft-outreach/case-02.yml
+    task: draft-outreach
+    instance: 2
+  - id: isolation-grounding__case-01
+    path: cases/isolation-grounding/case-01.yml
+    task: isolation-grounding
+    instance: 1
+  - id: isolation-grounding__case-02
+    path: cases/isolation-grounding/case-02.yml
+    task: isolation-grounding
+    instance: 2
+notes: |
+  Phase 7 scaffolds parameterized held-out instances + trial_plan seeds.
+  Bind qualification campaigns to this fixture_set_hash and protocol v1.0.0.
+  Do not regenerate an active evidence index or enable Unattended until every
+  mandatory prerequisite in schemas/statistical-protocol.v1.yml passes after
+  Phases 0–6 deploy.

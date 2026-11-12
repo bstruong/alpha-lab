@@ -1,0 +1,116 @@
+{
+  "schema": "alpha.report.v2",
+  "run_id": "phase7-scaffold-sample",
+  "scenario": "ikigai-dot",
+  "model_id": "demo-model",
+  "prompt_preset": "shipping",
+  "suite_complete": true,
+  "dry_run": false,
+  "qualification_eligible": false,
+  "promotable": false,
+  "run_manifest_uri": "results/runs/phase7-scaffold-sample/run_manifest.json",
+  "status": {
+    "execution_health": "ok",
+    "gate_status": "not_applicable",
+    "benchmark_verdict": "pass",
+    "statistical_sufficiency": "inadequate_for_unattended",
+    "qualification_eligible": false,
+    "routing_authority": "none"
+  },
+  "provenance": {
+    "schema": "alpha.provenance.v1",
+    "model": {
+      "quantization": "q4_k_m",
+      "model_sha256": "deadbeef"
+    },
+    "runner": {
+      "image_digest": "sha256:runnerdemo"
+    },
+    "jarvis": {
+      "image_digest": "sha256:jarvisdemo"
+    },
+    "repositories": {
+      "alpha": { "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "dirty": false },
+      "alpha_lab": { "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "dirty": false },
+      "homelab_k3s": { "commit": "cccccccccccccccccccccccccccccccccccccccc", "dirty": false }
+    },
+    "content": {
+      "scenario_hash": "scenario-demo",
+      "fixture_set_hash": "fixture-demo"
+    },
+    "lease": {
+      "holder": "alpha-campaign-demo",
+      "run_id": "phase7-scaffold-sample"
+    },
+    "graded_host": {
+      "watchtower_job": true,
+      "job_name": "alpha-campaign-demo"
+    }
+  },
+  "aggregate": {
+    "pass_at_1": 0.8,
+    "first_attempt_success": 0.8,
+    "pass_at_1_numerator": 4,
+    "pass_at_1_denominator": 5,
+    "tasks_passed": 4,
+    "tasks_total": 5,
+    "invalid_trials": 0
+  },
+  "tasks": [
+    {
+      "name": "rank-fill-template",
+      "kind": "graded",
+      "skill": "crm_rank",
+      "pass_at_1": true,
+      "scored": true,
+      "invalid": false,
+      "seed": 1001,
+      "trial": 1,
+      "failure_class": "none"
+    },
+    {
+      "name": "rank-from-candidates",
+      "kind": "graded",
+      "skill": "crm_rank",
+      "pass_at_1": false,
+      "scored": true,
+      "invalid": false,
+      "seed": 1001,
+      "trial": 1,
+      "failure_class": "partial"
+    },
+    {
+      "name": "scorecard-apply-rules",
+      "kind": "graded",
+      "skill": "crm_scorecard",
+      "pass_at_1": true,
+      "scored": true,
+      "invalid": false,
+      "seed": 1001,
+      "trial": 1,
+      "failure_class": "none"
+    },
+    {
+      "name": "draft-outreach",
+      "kind": "graded",
+      "skill": "crm_draft",
+      "pass_at_1": true,
+      "scored": true,
+      "invalid": false,
+      "seed": 1001,
+      "trial": 1,
+      "failure_class": "none"
+    },
+    {
+      "name": "isolation-grounding",
+      "kind": "graded",
+      "skill": "crm_isolation",
+      "pass_at_1": true,
+      "scored": true,
+      "invalid": false,
+      "seed": 1001,
+      "trial": 1,
+      "failure_class": "none"
+    }
+  ]
+}
