@@ -1,0 +1,51 @@
+{
+  "schema": "alpha.qualification.v2",
+  "model_id": "gemma4-27b",
+  "engine_preset": "gemma4-27b",
+  "prompt_preset": "shipping",
+  "role": "triager",
+  "alpha_run_id": "20261109T164509Z-email-triage",
+  "scenario_id": "email-triage",
+  "pass_at_1": 0.8,
+  "gate_pass_at_1": 1.0,
+  "graded_pass_at_1": 0.8,
+  "max_rung": "L2",
+  "ceiling_rung": "L2",
+  "credit_mean": 0.8,
+  "failure_class_histogram": {
+    "partial": 1,
+    "none": 4
+  },
+  "ship_skills": [
+    {
+      "skill": "triage_priority",
+      "max_rung": "L1",
+      "pass_at_1": 0.5,
+      "credit_mean": 0.5
+    },
+    {
+      "skill": "triage_security",
+      "max_rung": "L2",
+      "pass_at_1": 1.0,
+      "credit_mean": 1.0
+    },
+    {
+      "skill": "triage_actions",
+      "max_rung": "L2",
+      "pass_at_1": 1.0,
+      "credit_mean": 1.0
+    },
+    {
+      "skill": "triage_isolation",
+      "max_rung": "L2",
+      "pass_at_1": 1.0,
+      "credit_mean": 1.0
+    }
+  ],
+  "qualified": true,
+  "report_uri": "reports/20261109T164509Z-email-triage.md",
+  "qualified_at": "2026-11-09T16:46:30Z",
+  "expires_at": "2026-12-09T16:46:30Z",
+  "node_class": "lab-gpu-32g",
+  "measurement_run_id": "20261109T164600Z-email-triage"
+}
