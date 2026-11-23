@@ -2,7 +2,7 @@
 
 Personal **benchmark suite and campaign archive** for [Alpha](https://github.com/bstruong/alpha) (`alpha-eval` gem).
 
-Alpha is the reusable evaluation **mechanism** (runner, graders, qualify, capability-map). This repo is the **lab**: sole owner of `scenarios/ikigai-dot`, immutable published evidence, held-out fixtures, and (after Phase 7) the active evidence index.
+**Ownership split:** [Alpha](https://github.com/bstruong/alpha) owns the reusable evaluation **mechanism** (CLI runner, deterministic graders, `qualify`, reports schema). **This repo** is the **lab**: sole owner of `scenarios/ikigai-dot`, immutable published evidence, held-out fixtures, and (after Phase 7) the active evidence index. Clone Alpha to run campaigns; publish sanitized outputs here.
 
 Inference wake/lease for the lab GPU stack lives in [homelab-k3s](https://github.com/bstruong/homelab-k3s). Graded suites run only as Watchtower campaign Jobs; laptops may submit/monitor, never host graded runners.
 
